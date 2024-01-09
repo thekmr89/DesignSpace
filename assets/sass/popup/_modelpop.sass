@@ -17,6 +17,8 @@
         --transitiondelayA: 1s
         transition-delay: var(--transitiondelayA)
         transition: opacity .3s ease-in-out .4s, transform 0s ease var(--transitiondelayA)
+        @include respond-to(screen-767)
+            --flexsize: 100%
         &.is-open
             transition-delay: 0s
             transform: translateY(0%)
@@ -42,6 +44,8 @@
             box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px
             cursor: pointer
             z-index: 2
+            @include respond-to(screen-991)
+                left: 20px
             img
                 width: calc( var(--btnsize) * .35 )
                 filter: invert(1)
@@ -57,6 +61,8 @@
                 flex: 0 1 var(--flexsize)
                 height: 100%
                 background: transparent
+                @include respond-to(screen-991)
+                    display: none
             .colB
                 transition: .5s ease
                 height: 100%
@@ -69,13 +75,27 @@
                 background-size: 12%
                 transform: translateX(-100%)
                 transition: var(--transitiondelayA) ease
+                @include respond-to(screen-767)
+                    flex: 0 1 100%
+                    max-width: 100%
+                    width: 100%
                 .colb-wrap
+                    @include respond-to(screen-767)
+                        width: 100%
+                        padding: 20px
                     form
                         display: grid
                         grid-template-columns: repeat(2,1fr)
                         grid-gap: 12px 15px
                         --fieldwidth: 350px
                         margin: 30px 0 40px
+                        @include respond-to(screen-1152)
+                            --fieldwidth: 270px
+                        @include respond-to(screen-767)
+                            --fieldwidth: 100%
+                            grid-template-columns: 100%
+                        @include respond-to(screen-520)
+                            margin: 15px 0 25px
                         .form-group
                             --padspace: 9px
                             position: relative
@@ -125,6 +145,8 @@
                             &.message_box
                                 height: 100%
                                 grid-area: 1/2/4
+                                @include respond-to(screen-767)
+                                    grid-area: initial
                                 label
                                     top: var(--padspace)
                                     translate: 0 0
@@ -134,6 +156,8 @@
                                 textarea
                                     height: 100%
                                     resize: none
+                                    @include respond-to(screen-767)
+                                        min-height: 150px
                     .submit_btn
                         display: block
                         margin-left: auto

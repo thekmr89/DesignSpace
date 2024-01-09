@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/sass/style.css">
     <link rel="stylesheet" href="./assets/font/font.css">
     <link rel="stylesheet" href="./assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="./assets/css/spotlight.css">
     <script type="text/javascript" src="./assets/js/jquery-min.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
                     <ul>
                         <li><a data-scroll=".homeajsecB" href="javascript:void(0);">Services</a></li>
                         <li><a data-scroll=".GalSecHome" href="javascript:void(0);">Gallery</a></li>
-                        <li><a data-scroll=".serMpsec" href="javascript:void(0);">Portfolio</a></li>
+                        <li><a data-scroll=".about-me-sec" href="javascript:void(0);">Portfolio</a></li>
                     </ul>
                 </nav>
                 <div class="btnCol">
@@ -59,13 +60,13 @@
                         <div class="colA">
                             <div class="home-service-slider owl-carousel">
                                 <div data-slide="bedroom_designs" class="item">
-                                    <a href=""><img src="./assets/image/other/bedroom-design.jpg" alt=""></a>
+                                    <a href="javascript:void(0);" data-spotlight="bedroomImages"><img src="./assets/image/other/bedroom-design.jpg" alt=""></a>
                                 </div>
                                 <div data-slide="hall_designs" class="item">
-                                    <a href=""><img src="./assets/image/other/hall-design.jpg" alt=""></a>
+                                    <a href="javascript:void(0);" data-spotlight="hallImages"><img src="./assets/image/other/hall-design.jpg" alt=""></a>
                                 </div>
                                 <div data-slide="kitchen_designs" class="item">
-                                    <a href=""><img src="./assets/image/other/kitchen-design.jpg" alt=""></a>
+                                    <a href="javascript:void(0);" data-spotlight="kitchenImages"><img src="./assets/image/other/kitchen-design.jpg" alt=""></a>
                                 </div>
                             </div>
                             <div class="slideAdots"></div>
@@ -105,32 +106,32 @@
                             </div>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal1.jpg">
                                 <img src="./assets/image/other/gal1.jpg" alt="">
                             </a>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal2.jpg">
                                 <img src="./assets/image/other/gal2.jpg" alt="">
                             </a>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal3.jpg">
                                 <img src="./assets/image/other/gal3.jpg" alt="">
                             </a>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal4.jpg">
                                 <img src="./assets/image/other/gal4.jpg" alt="">
                             </a>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal6.jpg">
                                 <img src="./assets/image/other/gal6.jpg" alt="">
                             </a>
                         </div>
                         <div class="col">
-                            <a href="">
+                            <a class="spotlight" href="./assets/image/other/gal8.jpg">
                                 <img src="./assets/image/other/gal8.jpg" alt="">
                             </a>
                         </div>
@@ -235,6 +236,40 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="./assets/js/spotlight.js"></script>
 <script type="text/javascript" src="./assets/js/owl-caroussel.js"></script>
 <script type="text/javascript" src="./assets/js/main.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var galleries = {
+            bedroomImages: [
+                {src: "./assets/image/other/bedroom-design.jpg"},
+                {src: "./assets/image/other/bedroom-design.jpg"},
+                {src: "./assets/image/other/bedroom-design.jpg"},
+            ],
+            hallImages: [
+                {src: "./assets/image/other/hall-design.jpg"},
+                {src: "./assets/image/other/hall-design.jpg"},
+                {src: "./assets/image/other/hall-design.jpg"}
+            ],
+            kitchenImages: [
+                {src: "./assets/image/other/kitchen-design.jpg"},
+                {src: "./assets/image/other/kitchen-design.jpg"},
+                {src: "./assets/image/other/kitchen-design.jpg"}
+            ]
+        };
+        $('[data-spotlight]').click(function(){
+            var galleryName = $(this).attr('data-spotlight');
+            var galleryData = galleries[galleryName];
+        
+            if (galleryData) {
+                Spotlight.show(galleryData, {
+                    index: 3,
+                    autohide: false,
+                    control: ["zoom", "close", "page" ]
+                });
+            }
+        })
+    })
+</script>
 </html>

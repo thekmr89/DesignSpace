@@ -72,7 +72,7 @@ var SlideA = $('.home-service-slider');
 
 SlideA.owlCarousel({
     items: 1,
-    loop: true,
+    loop: false,
     nav: false,
     autoplay: true,
     autoplayTimeOut: 1500,
