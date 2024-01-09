@@ -1,0 +1,631 @@
+.home-banner
+    position: relative
+    margin-top: var(--headerheight)
+    .bg
+        line-height: 0
+        video
+            width: 100%
+            height: calc(100vh - var(--headerheight))
+            object-fit: cover
+            @include respond-to(screen-991)
+                height: 100%
+            @include respond-to(screen-320)
+                height: 245px
+    .banner-wrapper
+        position: absolute
+        left: 10%
+        top: 50%
+        translate: 0 -50%
+        @include respond-to(screen-767)
+            position: static
+            translate: 0 0
+        .content
+            max-width: 450px
+            @include respond-to(screen-1280)
+                max-width: 370px
+            @include respond-to(screen-991)
+                max-width: 100%
+            @include respond-to(screen-767)
+                padding: 0 20px
+                margin: 30px 0
+            @include respond-to(screen-320)
+                padding: 0 15px
+            h1
+                @include respond-to(screen-991)
+                    max-width: 325px
+                @include respond-to(screen-767)
+                    position: absolute
+                    top: -100%
+                    left: 0
+                    right: 0
+                    padding: 0 20px
+            h1
+                em
+                    .word-flick
+                        display: inline
+                    span.caret
+                        vertical-align: top
+                        font-family: $Light
+                        animation: blink-blink 1s step-end infinite
+                        @keyframes blink-blink
+                            0%
+                                visibility: visible
+                            50%
+                                visibility: hidden
+                            100%
+                                visibility: visible
+            p
+                margin: 25px 0 45px
+                font-size: 18px
+                line-height: 20px
+                @include respond-to(screen-991)
+                    max-width: 425px
+                @include respond-to(screen-767)
+                    margin: 0 auto 30px
+                    text-align: justify
+                b
+                    color: $primary
+                    font-family: $Bold
+            .btn-col
+                display: flex
+                align-items: center
+                gap: 20px
+                @include respond-to(screen-767)
+                    justify-content: center
+                @include respond-to(screen-320)
+                    gap: 5px
+                a
+                    display: flex
+                    gap: 6px
+                    align-items: center
+                    background: $primary
+                    color: $white
+                    line-height: 1
+                    padding: 10px 30px
+                    border-radius: 30px
+                    letter-spacing: .4px
+                    transition: .3s ease-out
+                    @include respond-to(screen-420)
+                        font-size: 14px
+                        padding: 8px 20px
+                    &:hover
+                        background: #031acf
+                    img
+                        filter: invert(1)
+                    &.wtsp
+                        background: #229f51
+                        &:hover
+                            background: #25D366
+.homeajsecB
+    --flexsize: 50%
+    @include respond-to(screen-767)
+        --flexsize: 100%
+    .flex
+        background: #fbfbfb url(../image/backgrounds/bg4.png) no-repeat
+        background-size: 100%
+        @include respond-to(screen-767)
+            background-size: 100% 57%
+            background-position: bottom
+        @include respond-to(screen-320)
+            background-size: 100% 61%
+        .colA
+            flex: 0 1 var(--flexsize)
+            max-width: var(--flexsize)
+            width: 100%
+            position: relative
+            overflow: hidden
+            &::before
+                position: absolute
+                content: ""
+                top: 50%
+                translate: 0 -50%
+                right: calc((var(--shadowsize) / 2) * -1)
+                --shadowsize: 150px
+                height: var(--shadowsize)
+                width: var(--shadowsize)
+                border-radius: 50%
+                background: $black
+                z-index: 2
+                filter: blur(50px)
+            .home-service-slider
+                @include respond-to(screen-1024)
+                    height: 100%
+                .owl-stage-outer,.owl-stage,.owl-item,.item
+                    @include respond-to(screen-1024)
+                        height: 100%
+                img
+                    height: calc(100vh - var(--headerheight))
+                    object-fit: cover
+                    @include respond-to(screen-1024)
+                        height: 100%
+            .slideAdots
+                position: absolute
+                top: 50%
+                right: 30px
+                translate: 0 -50%
+                --btnsize: 10px
+                z-index: 2
+                display: flex
+                flex-direction: column
+                gap: 18px 0
+                button.owl-dot
+                    height: calc(var(--btnsize) * .8)
+                    width: calc(var(--btnsize) * .8)
+                    border-radius: 50%
+                    background: $white
+                    opacity: .9
+                    cursor: pointer
+                    transition: .3s ease
+                    &.active
+                        height: var(--btnsize)
+                        width: var(--btnsize)
+                        outline: 2px solid $white
+                        outline-offset: 4px
+                        opacity: 1
+        .colB
+            flex: 0 1 calc(100% - var(--flexsize))
+            max-width: calc(100% - var(--flexsize))
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            background: #ffffffad
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+            .card
+                padding: 50px
+                --headingheight: defaultValue
+                max-width: 585px
+                @include respond-to(screen-767)
+                    padding: 30px 25px
+                .heading
+                    h4
+                        font-size: 25px
+                        font-family: $Bold
+                        line-height: 1
+                        color: $primary
+                        text-transform: uppercase
+                        @include respond-to(screen-1280)
+                            font-size: 18px
+                        @include respond-to(screen-1024)
+                            font-size: 14px
+                            font-family: $SemiBold
+                        @include respond-to(screen-320)
+                            font-family: $Medium
+                            line-height: 1.2
+                    h4.brk
+                        color: $black
+                        display: inline-block
+                        vertical-align: middle
+                        padding-right: 5px
+                        font-family: $Light
+                    h4.brk,h3
+                        font-size: 55px
+                        line-height: 1.2
+                        @include respond-to(screen-1280)
+                            font-size: 40px
+                        @include respond-to(screen-1024)
+                            font-size: 30px
+                        @include respond-to(screen-320)
+                            font-size: 24px
+                    h5
+                        font-size: 65px
+                        text-transform: uppercase
+                        line-height: 1
+                        color: $grey
+                        @include respond-to(screen-1280)
+                            font-size: 50px
+                        @include respond-to(screen-1024)
+                            font-size: 30px
+                        @include respond-to(screen-320)
+                            font-size: 24px
+                    .slideWrap
+                        display: inline-block
+                        vertical-align: middle
+                        overflow: hidden
+                        .PlatformSLideJs
+                            transition: .5s ease-in-out
+                .contentwrap
+                    padding-top: 30px
+                    @include respond-to(screen-1024)
+                        padding-top: 12px
+                .get-quote-btn
+                    margin-top: 30px
+                    font-family: $Medium
+                    background: $primary
+                    color: $white
+                    padding: 7px 30px
+                    border-radius: 30px
+                    @include respond-to(screen-1024)
+                        margin-top: 20px
+                    @include respond-to(screen-767)
+                        font-size: 14px
+                        font-family: $Regular
+                        padding: 5px 20px
+.GalSecHome
+    padding: 55px 0
+    background: url(../image/backgrounds/bg3.png) no-repeat
+    background-position: 3% 0
+    background-size: 8%
+    @include respond-to(screen-1400)
+        background-size: 3%
+    @include respond-to(screen-1366)
+        background-size: 7%
+    @include respond-to(screen-767)
+        padding: 45px 0
+        background-size: 16%
+    .GalWrap
+        padding: 0 5rem
+    .grid
+        grid-template-columns: repeat(3,1fr)
+        --vargap: 7px
+        --rowsize: 300px
+        grid-gap: var(--vargap)
+        @include respond-to(screen-991)
+            grid-template-columns: repeat(2, 1fr)
+        @include respond-to(screen-767)
+            grid-template-columns: 100%
+        .col
+            border-radius: 6px
+            overflow: hidden
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px
+            &:nth-child(1)
+                display: flex
+                justify-content: center
+                box-shadow: none
+            .heading
+                @include respond-to(screen-767)
+                    text-align: center
+                    margin-bottom: 35px
+                p
+                    max-width: 325px
+                    @include respond-to(screen-1366)
+                        max-width: 200px
+                    @include respond-to(screen-767)
+                        max-width: 320px
+                h3
+                    position: relative
+                    margin: 30px 0 20px
+                    color: $grey
+                    @include respond-to(screen-767)
+                        margin: 0 0 20px
+                    span
+                        display: block
+                        font-size: 100px
+                        line-height: 1
+                        font-family: $Silver
+                        padding-left: 4px
+                        color: $black
+                        @include respond-to(screen-1280)
+                            font-size: 80px
+            &:hover
+                a
+                    &::before
+                        opacity: 0
+            a
+                display: block
+                height: var(--rowsize)
+                line-height: 0
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    background: #000000
+                    opacity: .3
+                    pointer-events: none
+                    user-select: none
+                    transition: .3s linear
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+            &:nth-child(3),&:nth-child(6)
+                a
+                    height: calc((var(--rowsize) + (var(--vargap) / 2)) * 2)
+                    @include respond-to(screen-767)
+                        height: var(--rowsize)
+            &:nth-child(3)
+                grid-area: 1/3/3
+                @include respond-to(screen-991)
+                    grid-area: 2/1/4
+                @include respond-to(screen-767)
+                    grid-area: initial
+            &:nth-child(6)
+                grid-area: 2/1/4
+                @include respond-to(screen-991)
+                    grid-area: initial
+                a
+                    @include respond-to(screen-767)
+                        height: 100%
+                    @include respond-to(screen-991)
+                        height: var(--rowsize)
+.serMpsec
+    height: calc( 100vh - var(--headerheight) )
+    background: url(../image/backgrounds/bg2.png) no-repeat
+    background-size: 100% 100%
+    background-attachment: fixed
+    box-shadow: inset rgba(149, 157, 165, 0.2) 0px 28px 54px
+    position: relative
+    @include respond-to(screen-991)
+        height: 435px
+    @include respond-to(screen-767)
+        background-size: cover
+        background-position: center
+    .serMpsecWrap
+        position: absolute
+        top: 50%
+        translate: 0 -50%
+        left: 0
+        right: 0
+        z-index: 1
+        .content
+            max-width: 500px
+            margin: 0 auto
+            text-align: center
+            h3
+                display: flex
+                align-items: center
+                text-align: left
+                line-height: 1
+                gap: 0 7px
+                text-transform: uppercase
+                font-family: $Bold
+                justify-content: center
+                b
+                    color: $grey
+                    font-weight: normal
+                em
+                    font-style: normal
+                    font-size: 150px
+                    line-height: inherit
+                    color: inherit
+                    font-family: $Silver
+                    @include respond-to(screen-1024)
+                        font-size: 85px
+                    @include respond-to(screen-991)
+                        font-size: 65px
+                    @include respond-to(screen-320)
+                        font-size: 50px
+            p
+                margin: 20px 0 40px
+            .get-quote-btn
+                font-family: $Medium
+                background: $black
+                border: 1px solid $black
+                color: $white
+                padding: 5px 30px
+                border-radius: 30px
+                &:hover
+                    background: $primary
+                    border-color: $primary
+.about-me-sec
+    position: relative
+    overflow: hidden
+    height: calc( 100vh - var(--headerheight) )
+    display: flex
+    align-items: center
+    background: url(../image/backgrounds/dots.jpg) no-repeat
+    background-size: 100% 100%
+    --icosize: 80vw
+    --padlr: 10rem
+    @include respond-to(screen-1400)
+        --padlr: 3rem
+    @include respond-to(screen-1152)
+        --icosize: 70vw
+    @include respond-to(screen-1024)
+        height: auto
+        padding: 55px 0
+        --padlr: 35px
+    @include respond-to(screen-991)
+        --icosize: 100%
+    @include respond-to(screen-767)
+        --padlr: 20px
+        background-size: cover
+        --icosize: 110vw
+        padding: 45px 0 0
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 100%
+        translate: -50% -50%
+        height: var(--icosize)
+        width: var(--icosize)
+        border-radius: 50%
+        pointer-events: none
+        user-select: none
+        background: $primary
+        z-index: 1
+        @include respond-to(screen-767)
+            top: 100%
+            left: 50%
+    &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        pointer-events: none
+        user-select: none
+        background: #f5f5f5ba
+        z-index: 0
+    .Wrapabt
+        padding-left: var(--padlr)
+        @include respond-to(screen-767)
+            padding: 0 var(--padlr)
+    .flex
+        .colA
+            position: relative
+            z-index: 1
+            width: 800px
+            @include respond-to(screen-1280)
+                width: 690px
+            @include respond-to(screen-1024)
+                width: 600px
+            @include respond-to(screen-991)
+                width: 100%
+                max-width: 65%
+            @include respond-to(screen-767)
+                max-width: 100%
+            .heading
+                p
+                    margin: 20px 0 50px
+                    max-width: 600px
+                    @include respond-to(screen-767)
+                        text-align: center
+                h3
+                    font-size: 60px
+                    line-height: 1
+                    @include respond-to(screen-1280)
+                        font-size: 44px
+                    @include respond-to(screen-991)
+                        font-size: 36px
+                    @include respond-to(screen-767)
+                        text-align: center
+                    @include respond-to(screen-320)
+                        font-size: 28px
+                    span
+                        display: inline-block
+                        color: $primary
+                        font-family: $Bold
+                        text-transform: uppercase
+                        border-bottom: 8px solid $primary
+            .col-md-sec-wrap
+                --leftpos: 36px
+                --linetwo: 30px
+                --lineone: 20px
+                --linewidth: 2px
+                --linewidthtwo: 2px
+                --iconone: 20px
+                --icontwo: 15px
+                --paddingico: 10px
+                --afterbeforedot: 9px
+                display: flex
+                flex-wrap: wrap
+                @include respond-to(screen-1024)
+                    --leftpos: 25px
+                    --linetwo: 20px
+                    --lineone: 20px
+                    --linewidth: 1px
+                    --linewidthtwo: 1px
+                    --iconone: 10px
+                    --icontwo: 12px
+                    --paddingico: 8px
+                    --afterbeforedot: 11px
+                @include respond-to(screen-991)
+                    flex-direction: column
+                    gap: 30px 0
+            .col-md-sec
+                flex: 0 1 50%
+                max-width: 50%
+                width: 100%
+                @include respond-to(screen-991)
+                    flex: 0 1 100%
+                    max-width: 100%
+                h4
+                    display: inline-block
+                    position: relative
+                    font-size: 25px
+                    color: $grey
+                    line-height: 1
+                    margin-bottom: var(--lineone)
+                    text-transform: uppercase
+                    font-family: $Bold
+                    @include respond-to(screen-1280)
+                        font-size: 20px
+                    &::before,&::after
+                        content: ''
+                        position: absolute
+                        background: $grey
+                    &::before
+                        top: 100%
+                        height: var(--lineone)
+                        width: var(--linewidth)
+                        left: var(--leftpos)
+                        translate: -50% 0
+                    &::after
+                        height: var(--linewidth)
+                        width: calc(var(--linetwo) + var(--linewidth))
+                        left: calc(var(--leftpos) + ( var(--linetwo) / 2))
+                        top: calc(100% + var(--lineone))
+                        translate: -50% 0
+                .col-md
+                    margin-left: calc(var(--leftpos) + var(--linetwo))
+                    border-left: var(--linewidth) solid $grey
+                    padding: 10px 0
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: 0
+                        height: var(--afterbeforedot)
+                        width: var(--afterbeforedot)
+                        border-radius: 50%
+                        background: $grey
+                        left: -6px
+                    h5
+                        position: relative
+                        padding-left: calc(var(--iconone) + var(--icontwo) + var(--paddingico))
+                        font-size: 20px
+                        font-family: $SemiBold
+                        &::before,&::after
+                            content: ''
+                            position: absolute
+                            top: 50%
+                            translate: 0 -50%
+                        &::before
+                            left: 0
+                            width: var(--iconone)
+                            height: var(--linewidthtwo)
+                            background: $grey
+                        &::after
+                            left: calc(var(--iconone))
+                            height: var(--icontwo)
+                            width: var(--icontwo)
+                            border-radius: 50%
+                            border: var(--linewidthtwo) solid $primary
+                    ul
+                        padding-left: calc(var(--iconone) + var(--icontwo) + var(--paddingico) + 15px)
+                        padding-top: 10px
+                        padding-bottom: 15px
+                        li
+                            list-style: disc
+                            &::marker
+                                color: $primary
+        .colB
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            width: 50vw
+            z-index: 2
+            @include respond-to(screen-1152)
+                width: 38vw
+            @include respond-to(screen-991)
+                width: 100%
+                max-width: 55%
+            @include respond-to(screen-767)
+                position: static
+                max-width: 75%
+                margin: auto
+            .bgabt
+                height: 100%
+                padding-top: 80px
+                @include respond-to(screen-1152)
+                    display: flex
+                    align-items: flex-end
+                @include respond-to(screen-767)
+                    padding-top: 0
+                img
+                    height: 100%
+                    margin-left: auto
+                    padding-right: var(--padlr)
+                    filter: drop-shadow(-15px 30px 30px #00000085)
+                    @include respond-to(screen-1152)
+                        height: auto

@@ -1,0 +1,76 @@
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 5
+    background: none
+    transition: .5s ease
+    background: $white
+    &.header-fixed
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px
+    .header-wrapper
+        padding: 15px 0
+        display: grid
+        grid-template-columns: auto 1fr auto
+        @include respond-to(screen-767)
+            grid-template-columns: auto auto
+            padding: 12px 0
+        .logo
+            max-width: 200px
+            align-self: center
+            @include respond-to(screen-420)
+                max-width: 150px
+            img
+                transition: .5s ease
+        .btnCol
+            @include flex
+            align-items: center
+            justify-content: flex-end
+            gap: 3rem
+            button.enquire-btn
+                flex: 0 1 auto
+                appearance: none
+                background: none
+                border: 1px solid $primary
+                cursor: pointer
+                line-height: 1
+                padding: 8px 30px
+                background: $primary
+                color: $white
+                border-radius: 30px
+                transition: .5s ease
+                @include respond-to(screen-320)
+                    padding: 7px 20px
+                    font-size: 14px
+        nav
+            @include flex
+            align-items: center
+            padding-left: 2rem
+            padding-right: 3rem
+            justify-self: flex-end
+            @include respond-to(screen-767)
+                display: none
+            ul
+                flex: 1
+                li
+                    display: inline-block
+                    vertical-align: middle
+                    &:not(:first-child)
+                        margin-left: 1.5rem
+                    a
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        line-height: 1
+                        gap: 8px
+                        transition: .5s ease
+                        font-family: $Medium
+                        svg,path
+                            fill: $primary
+                        svg,path
+                            transition: .2s ease-out
+                        &:hover
+                            color: $primary
+                            svg,path
+                                fill: $primary

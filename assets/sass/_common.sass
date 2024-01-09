@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after
+    padding: 0
+    margin: 0
+    list-style: none
+    box-sizing: border-box
+//
+:root
+    --headerheight: 63.6px
+    --scrollwidth: 3px
+    @include respond-to(screen-420)
+        --headerheight: 58px
+    @include respond-to(screen-320)
+        --headerheight: 54px
+//
+body,html
+    font-family: $Regular
+    font-size: 16px
+    line-height: 1.3
+    color: $black
+    &::-webkit-scrollbar
+        width: var(--scrollwidth)
+        background: $white
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $black
+        outline: 0
+    &.overflow-hidden
+        overflow: hidden
+body
+    &.overfloy-hidden
+        overflow: hidden
+        margin-right: var(--scrollwidth)
+        header
+            transition: 0s
+            margin-right: var(--scrollwidth)
+a[href]
+    text-decoration: none
+    color: $black
+    transition: .5s ease
+    cursor: pointer
+img
+    max-width: 100%
+    display: block
+    transition: .5s ease
+.container
+    max-width: 1280px
+    width: 100%
+    margin: 0 auto
+    @include respond-to(screen-1300)
+        padding: 0 25px
+    @include respond-to(screen-767)
+        padding: 0 15px
+    &.container2
+        @include respond-to(screen-675)
+            padding-right: 0
+.container-fluid
+    padding: 0 50px
+    display: block
+    margin: 0 auto
+    @include respond-to(screen-991)
+        padding: 0 15px
+h1,h2,h3,h4,h5,h6
+    font-weight: normal
+    em
+        color: $primary
+        font-style: normal
+h2,h3
+    font-family: $SemiBold
+h4,h5,h6
+    font-family: $Medium
+h1
+    font-family: $Bold
+    font-size: 55px
+    line-height: 1
+    @include respond-to(screen-1280)
+        font-size: 42px
+    @include respond-to(screen-991)
+        font-size: 28px
+h2
+    font-size: 48px
+    line-height: 1
+h3
+    font-size: 36px
+    line-height: 36px
+    @include respond-to(screen-1300)
+        font-size: 30px
+        line-height: 33px
+    @include respond-to(screen-1140)
+        font-size: 26px
+        line-height: 29px
+    @include respond-to(screen-767)
+        font-size: 24px
+        line-height: 26px
+h4
+    font-size: 24px
+    line-height: 30px
+    @include respond-to(screen-1366)
+        font-size: 22px
+        line-height: 22px
+    @include respond-to(screen-767)
+        font-size: 18px
+        line-height: 18px
+h5
+    font-size: 20px
+    line-height: 1
+    @include respond-to(screen-1300)
+        font-size: 18px
+h6
+    font-size: 18px
+    line-height: 24px
+    @include respond-to(screen-1024)
+        font-size: 16px
+        line-height: 22px
+.text-center
+    text-align: center
+.grid
+    display: grid
+.invert
+    filter: invert(1)
+.flex
+    display: flex
+    flex-wrap: wrap
+button
+    appearance: none
+    font-family: inherit
+    font-weight: inherit
+    border: none
+    background: none
+    cursor: pointer
+.heading
+    h3
+        font-size: 48px
+        line-height: 1
+        @include respond-to(screen-1366)
+            font-size: 36px
+        @include respond-to(screen-991)
+            font-size: 36px
+        @include respond-to(screen-767)
+            font-size: 32px
+        @include respond-to(screen-320)
+            font-size: 24px
+        em
+            font-style: normal
+            font-weight: 100
+            font-size: 60px
+            line-height: 0.6
+            @include respond-to(screen-991)
+                font-size: 48px
+            @include respond-to(screen-767)
+                font-size: 44px
+    &.size30
+        h3
+            font-size: 30px
+            line-height: 1
+            @include respond-to(screen-1366)
+                font-size: 26px
+            @include respond-to(screen-767)
+                font-size: 24px
+    &.size36
+        h3
+            font-size: 36px
+            line-height: 1
+            @include respond-to(screen-1024)
+                font-size: 32px
+            @include respond-to(screen-991)
+                font-size: 28px
+            @include respond-to(screen-767)
+                font-size: 25px
+            @include respond-to(screen-365)
+                font-size: 24px
+.custom-scroll
+    &::-webkit-scrollbar
+        width: var(--scrollwidth)
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $text
+        outline: 0
+input,button,select
+    font-size: 16px
+    line-height: 24px
+    font-family: inherit
+.overlay
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    height: 100%
+    z-index: 9
+    background: #0000006c
+    pointer-events: none
+    user-select: none
+    opacity: 0
+    transition: opacity .8s ease
+    &.overlay_active
+        opacity: 1
+        left: 0
+        width: 100%
+        pointer-events: all
+.tab-nav
+    ul
+        text-align: center
+        li
+            display: inline-block
+            cursor: pointer
+.tab-nav-content
+    position: relative
+    overflow: hidden
+    .tabs
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        opacity: 0
+        user-select: none
+        pointer-events: none
+        transition: 0s ease
+        &.active
+            transition: .5s ease
+            position: unset
+            opacity: 1
+            visibility: visible
+            user-select: auto
+            pointer-events: all
+
+//
+.item-col
+    position: relative
+    figure
+        overflow: hidden
+    &::before,&::after
+        position: absolute
+        content: ''
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        user-select: none
+        pointer-events: none
+        z-index: 1
+    &::after
+        content: none
+    figcaption
+        display: block
+        line-height: 1
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 1

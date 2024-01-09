@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'JostLight';
+    src: url('./Jost-Light.woff2') format('woff2'),
+        url('./Jost-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JostRegular';
+    src: url('./Jost-Regular.woff2') format('woff2'),
+    url('./Jost-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JostMedium';
+    src: url('./Jost-Medium.woff2') format('woff2'),
+    url('./Jost-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JostSemiBold';
+    src: url('./Jost-SemiBold.woff2') format('woff2'),
+        url('./Jost-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JostBold';
+    src: url('./Jost-Bold.woff2') format('woff2'),
+        url('./Jost-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JostExtraBold';
+    src: url('./Jost-ExtraBold.woff2') format('woff2'),
+        url('./Jost-ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'SilverSouthScript';
+    src: url('./SilverSouthScript.woff2') format('woff2'),
+        url('./SilverSouthScript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

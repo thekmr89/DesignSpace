@@ -1,0 +1,148 @@
+.model-pop
+    position: fixed
+    right: 0
+    bottom: 0
+    top: 0
+    left: 0
+    z-index: 9
+    background: $white
+    .close-model
+        position: absolute
+        top: 0
+        right: 0
+    &.enquiry-pop
+        transform: translateY(100%)
+        opacity: 0
+        --flexsize: 40%
+        --transitiondelayA: 1s
+        transition-delay: var(--transitiondelayA)
+        transition: opacity .3s ease-in-out .4s, transform 0s ease var(--transitiondelayA)
+        &.is-open
+            transition-delay: 0s
+            transform: translateY(0%)
+            opacity: 1
+            .model-body
+                background-position: 0%
+                transition: 0s
+                .colB
+                    transform: translateX(0%)
+                    transition: 0s
+        .close-model
+            right: auto
+            top: 10px
+            left: calc(var(--flexsize) + 20px)
+            --btnsize: 40px
+            height: var(--btnsize)
+            width: var(--btnsize)
+            border-radius: 50%
+            background: $primary
+            display: flex
+            align-items: center
+            justify-content: center
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px
+            cursor: pointer
+            z-index: 2
+            img
+                width: calc( var(--btnsize) * .35 )
+                filter: invert(1)
+        .model-body
+            display: flex
+            flex-wrap: wrap
+            height: 100%
+            background: url(../image/img1.jpg) 
+            background-size: auto 100%
+            background-position: 225%
+            transition: var(--transitiondelayA) ease
+            .colA
+                flex: 0 1 var(--flexsize)
+                height: 100%
+                background: transparent
+            .colB
+                transition: .5s ease
+                height: 100%
+                flex: 1
+                display: flex
+                align-items: center
+                justify-content: center
+                background: #f7f7f7 url(../image/backgrounds/bg3.png) no-repeat
+                background-position: 92% 0
+                background-size: 12%
+                transform: translateX(-100%)
+                transition: var(--transitiondelayA) ease
+                .colb-wrap
+                    form
+                        display: grid
+                        grid-template-columns: repeat(2,1fr)
+                        grid-gap: 12px 15px
+                        --fieldwidth: 350px
+                        margin: 30px 0 40px
+                        .form-group
+                            --padspace: 9px
+                            position: relative
+                            input,textarea
+                                width: var(--fieldwidth)
+                                background: #fff
+                                box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 11px
+                                border-radius: 5px
+                                border: 1px solid #bebebe
+                                padding: var(--padspace)
+                                outline: none
+                                font-family: inherit
+                                font-size: inherit
+                                padding: var(--padspace)
+                                color: #000000
+                                &::-webkit-outer-spin-button,
+                                &::-webkit-inner-spin-button
+                                    -webkit-appearance: none
+                                    margin: 0
+                                &::-webkit-scrollbar
+                                    width: 3px
+                                    background: $white
+                                &::-webkit-scrollbar-track
+                                    box-shadow: none
+                                &::-webkit-scrollbar-thumb
+                                    background-color: $black
+                                    outline: 0
+                                    height: 5px
+                            label
+                                position: absolute
+                                top: 50%
+                                translate: 0 -50%
+                                left: var(--padspace)
+                                color: #000
+                                line-height: 1
+                                font-family: $Medium
+                                pointer-events: none
+                                transition: .3s ease
+                                span
+                                    color: red
+                                &.valid
+                                    color: #666
+                                    font-size: 14px
+                                    top: 0px
+                                    background: $white
+                                    padding: 0 4px
+                            &.message_box
+                                height: 100%
+                                grid-area: 1/2/4
+                                label
+                                    top: var(--padspace)
+                                    translate: 0 0
+                                    &.valid
+                                        top: 0
+                                        translate: 0 -50%
+                                textarea
+                                    height: 100%
+                                    resize: none
+                    .submit_btn
+                        display: block
+                        margin-left: auto
+                        margin-right: auto
+                        background: $primary
+                        color: $white
+                        font-size: 18px
+                        line-height: 1
+                        font-family: $Medium
+                        padding: 10px 40px
+                        border-radius: 30px
+                        text-align: center
