@@ -521,25 +521,31 @@ header .header-wrapper nav ul li a:hover svg, header .header-wrapper nav ul li a
 .home-banner {
   position: relative;
   margin-top: var(--headerheight);
+  --videoheight: calc(100vh - var(--headerheight));
+}
+@media (max-width: 991px) {
+  .home-banner {
+    --videoheight: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .home-banner {
+    --videoheight: 330px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .home-banner {
+    --videoheight: 245px;
+  }
 }
 .home-banner .bg {
   line-height: 0;
 }
 .home-banner .bg video {
   width: 100%;
-  height: calc(100vh - var(--headerheight));
+  height: var(--videoheight);
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media (max-width: 991px) {
-  .home-banner .bg video {
-    height: 100%;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .home-banner .bg video {
-    height: 245px;
-  }
 }
 .home-banner .banner-wrapper {
   position: absolute;
@@ -568,13 +574,12 @@ header .header-wrapper nav ul li a:hover svg, header .header-wrapper nav ul li a
 }
 @media (max-width: 767px) {
   .home-banner .banner-wrapper .content {
-    padding: 0 20px;
-    margin: 30px 0;
+    padding: 35px 25px;
   }
 }
 @media only screen and (max-width: 320px) {
   .home-banner .banner-wrapper .content {
-    padding: 0 15px;
+    padding: 35px 15px;
   }
 }
 @media (max-width: 991px) {
@@ -589,6 +594,12 @@ header .header-wrapper nav ul li a:hover svg, header .header-wrapper nav ul li a
     left: 0;
     right: 0;
     padding: 0 20px;
+  }
+}
+@media (max-width: 520px) {
+  .home-banner .banner-wrapper .content h1 {
+    top: -50%;
+    translate: 0 calc(var(--videoheight) / -2 + var(--headerheight));
   }
 }
 .home-banner .banner-wrapper .content h1 em .word-flick {
@@ -790,6 +801,11 @@ header .header-wrapper nav ul li a:hover svg, header .header-wrapper nav ul li a
 @media (max-width: 767px) {
   .homeajsecB .flex .colB .card {
     padding: 30px 25px;
+  }
+}
+@media (max-width: 520px) {
+  .homeajsecB .flex .colB .card {
+    padding: 45px 30px;
   }
 }
 .homeajsecB .flex .colB .card .heading h4 {

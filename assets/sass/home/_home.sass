@@ -1,16 +1,19 @@
 .home-banner
     position: relative
     margin-top: var(--headerheight)
+    --videoheight: calc(100vh - var(--headerheight))
+    @include respond-to(screen-991)
+        --videoheight: 100%
+    @include respond-to(screen-520)
+        --videoheight: 330px
+    @include respond-to(screen-320)
+        --videoheight: 245px
     .bg
         line-height: 0
         video
             width: 100%
-            height: calc(100vh - var(--headerheight))
+            height: var(--videoheight)
             object-fit: cover
-            @include respond-to(screen-991)
-                height: 100%
-            @include respond-to(screen-320)
-                height: 245px
     .banner-wrapper
         position: absolute
         left: 10%
@@ -26,10 +29,9 @@
             @include respond-to(screen-991)
                 max-width: 100%
             @include respond-to(screen-767)
-                padding: 0 20px
-                margin: 30px 0
+                padding: 35px 25px
             @include respond-to(screen-320)
-                padding: 0 15px
+                padding: 35px 15px
             h1
                 @include respond-to(screen-991)
                     max-width: 325px
@@ -39,6 +41,9 @@
                     left: 0
                     right: 0
                     padding: 0 20px
+                @include respond-to(screen-520)
+                    top: -50%
+                    translate: 0 calc((var(--videoheight) / -2) + var(--headerheight))
             h1
                 em
                     .word-flick
@@ -179,6 +184,8 @@
                 max-width: 585px
                 @include respond-to(screen-767)
                     padding: 30px 25px
+                @include respond-to(screen-520)
+                    padding: 45px 30px
                 .heading
                     h4
                         font-size: 25px
